@@ -10,15 +10,6 @@ export default function Skills() {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add("active")
-
-            // Animate progress bars when they come into view
-            const progressBars = entry.target.querySelectorAll(".skill-progress-bar")
-            progressBars.forEach((bar: Element) => {
-              const width = (bar as HTMLElement).dataset.width || "0"
-              setTimeout(() => {
-                ;(bar as HTMLElement).style.width = width
-              }, 300)
-            })
           }
         })
       },
@@ -34,28 +25,33 @@ export default function Skills() {
   }, [])
 
   const skillsWithProgress = [
-    { name: "WordPress Development", progress: "95%", icon: <Globe className="h-6 w-6" /> },
-    { name: "Core PHP & MySQL", progress: "90%", icon: <Code className="h-6 w-6" /> },
-    { name: "JavaScript & jQuery", progress: "90%", icon: <Zap className="h-6 w-6" /> },
-    { name: "WordPress Customizer API", progress: "92%", icon: <Settings className="h-6 w-6" /> },
-    { name: "ACF & Custom Post Types", progress: "95%", icon: <Layers className="h-6 w-6" /> },
-    { name: "Third-Party API Integration", progress: "88%", icon: <Server className="h-6 w-6" /> },
-    { name: "WP-CLI & Automation", progress: "80%", icon: <Workflow className="h-6 w-6" /> },
-    { name: "Database Management", progress: "85%", icon: <Database className="h-6 w-6" /> },
+    { name: "WordPress Development", icon: Globe },
+    { name: "Core PHP & MySQL", icon: Code },
+    { name: "JavaScript & jQuery", icon: Zap },
+    { name: "WordPress Customizer API", icon: Settings },
+    { name: "ACF & Custom Post Types", icon: Layers },
+    { name: "Third-Party API Integration", icon: Server },
+    { name: "WP-CLI & Automation", icon: Workflow },
+    { name: "Database Management", icon: Database },
   ]
 
-  const apiExperience = [
-    "Setmore",
-    "Clover",
-    "Pipedrive",
-    "Dialpad",
-    "Twilio",
-    "SendGrid",
-    "alahdi",
-    "Payment gateways",
-    "Surepay USA",
-    "SMS automation",
-  ]
+const apiExperience = [
+  { name: "Setmore", url: "https://www.setmore.com/" },
+  { name: "Clover", url: "https://www.clover.com/" },
+  { name: "Pipedrive", url: "https://www.pipedrive.com/" },
+  { name: "Dialpad", url: "https://www.dialpad.com/" },
+  { name: "Twilio", url: "https://www.twilio.com/" },
+  { name: "SendGrid", url: "https://sendgrid.com/" },
+  { name: "Aladhan", url: "https://aladhan.com/prayer-times-api" },
+  { name: "Wesabi", url: "https://wasabi.com/" },
+  { name: "Surepay USA - Payment Gateway", url: "https://surepay.co/" },
+  { name: "Email marketing Mailchimp", url: "https://mailchimp.com/" },
+  { name: "Stripe - Payment Gateway", url: "https://stripe.com/" },
+    { name: "SMS automation Firebase", url: "https://firebase.google.com/" },
+  { name: "Email marketing Brevo", url: "https://www.brevo.com/" },
+ 
+]
+
 
   return (
     <section id="skills" className="py-20">
@@ -65,23 +61,16 @@ export default function Skills() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           <div className="lg:col-span-2">
             <h3 className="text-xl font-semibold mb-6 reveal">Technical Proficiency</h3>
-            <div className="space-y-6">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
               {skillsWithProgress.map((skill, index) => (
-                <div key={index} className="reveal" style={{ transitionDelay: `${index * 0.1}s` }}>
-                  <div className="flex items-center justify-between mb-2">
-                    <div className="flex items-center gap-2">
-                      {skill.icon}
-                      <span className="font-medium">{skill.name}</span>
-                    </div>
-                    <span className="text-sm text-muted-foreground">{skill.progress}</span>
-                  </div>
-                  <div className="skill-progress">
-                    <div
-                      className="skill-progress-bar transition-all duration-1000 ease-out"
-                      style={{ width: "0%" }}
-                      data-width={skill.progress}
-                    ></div>
-                  </div>
+                <div key={index} className="reveal" style={{ transitionDelay: `${index * 0.06}s` }}>
+                 <div className="aspect-square rounded-lg bg-secondary/5 flex flex-col items-center p-4 hover:scale-105 transition-transform shadow-sm">
+  <div className="w-14 h-14 rounded-md bg-primary/10 flex items-center justify-center mb-3">
+    <skill.icon className="w-6 h-6 block text-primary" />
+  </div>
+  <div className="text-center font-medium text-sm leading-tight">{skill.name}</div>
+</div>
+
                 </div>
               ))}
             </div>
@@ -91,15 +80,19 @@ export default function Skills() {
             <h3 className="text-xl font-semibold mb-6">API Experience</h3>
             <div className="flex flex-wrap gap-2">
               {apiExperience.map((api, index) => (
-                <span
+                <a
                   key={index}
-                  className="skill-tag bg-secondary/20 backdrop-blur-sm border border-border"
+                  href={api.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="skill-tag bg-secondary/20 backdrop-blur-sm border border-border hover:bg-primary/10 transition-colors"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
-                  {api}
-                </span>
+                  {api.name}
+                </a>
               ))}
             </div>
+
           </div>
         </div>
       </div>

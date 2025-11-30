@@ -33,7 +33,7 @@ export default function About() {
             <div className="relative mb-8 md:mb-0">
               <div className="relative w-full aspect-square rounded-lg overflow-hidden glow">
               <Image
-                src="/nauman.png"
+                src="/about-us-pic.png"
                 alt="Nauman Sajjad"
                 width={0}
                 height={0}
