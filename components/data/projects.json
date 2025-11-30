@@ -1,0 +1,113 @@
+[{
+        "projectName": "Bastiyali",
+        "role": "Created animations for slides to improve presentations",
+        "website": "https://bastiyaliinventions.com/",
+        "location": "267 Fifth Avenue Penthouse, New York NY 10016",
+        "image": "/project1.png",
+        "enabled_all": true
+    },
+    {
+        "projectName": "Spielradar",
+        "role": "Developed a dynamic wishlist using custom posts and provided bug fixing support",
+        "website": "https://spielradar.com/",
+        "location": "Saudi Arabia",
+        "image": "/project2.png",
+        "enabled_all": true
+    },
+    {
+        "projectName": "Police & Tactical Supply",
+        "role": "Customized WooCommerce shop page and filters using Woolentor",
+        "website": "https://servetechglobal.ca/BOBL/",
+        "location": "None",
+        "image": "/project3.png",
+        "enabled_all": true
+    },
+    {
+        "projectName": "ASE Athletics",
+        "role": "Designed user-friendly pages with a focus on interaction and usability",
+        "website": "https://saddlebrown-gnu-131054.hostingersite.com/",
+        "location": "Plaza Pablo Ruiz Picasso 1, Madrid, Spain 28020",
+        "image": "/project4.png",
+        "enabled_all": true
+    },
+    {
+        "projectName": "Fresco Services LTD",
+        "role": "Fixed booking system bugs to ensure smooth functionality",
+        "website": "https://frescoservicesltd.com/",
+        "location": "none",
+        "image": "/project5.png",
+        "enabled_all": true
+    },
+    {
+        "projectName": "Jeanclgn",
+        "role": "Automated YouTube video integration, organized videos by categories and languages, and improved WooCommerce shop filters",
+        "website": "https://jeanclgn.com/videos",
+        "location": "none",
+        "image": "/project6.png",
+        "enabled_all": true
+    },
+    {
+        "projectName": "Viking Defence Services",
+        "role": "Configured and optimized SMTP setup with MailerSend",
+        "website": "https://vikingdefenseservices.com/",
+        "location": "USA",
+        "image": "/project7.png",
+        "enabled_all": true
+    },
+    {
+        "projectName": "Mechanic on Call",
+        "role": "Designed a responsive website using Elementor",
+        "website": "https://mechaniconcall.ca/",
+        "location": "Kitchener Ontario Canada",
+        "image": "/project8.png",
+        "enabled_all": false
+    },
+    {
+        "projectName": "NT Momineen",
+        "role": "Built a complete website from scratch using Elementor",
+        "website": "https://ntmomineen.org.au/",
+        "location": "Darwin area, Australia",
+        "image": "/project9.png",
+        "enabled_all": false
+    },
+    {
+        "projectName": "LazyME Grocery Store",
+        "role": "Designed Shopify landing and product pages for better user experience",
+        "website": "https://lazymegrocery.com.au/",
+        "location": "430 Chaple Street South Yarra VIC 3141, Australia",
+        "image": "/project10.png",
+        "enabled_all": false
+    },
+    {
+        "projectName": "Salah Time",
+        "role": "Managed and updated blogs, team pages, and service pages",
+        "website": "https://salahtime.co/",
+        "location": "none",
+        "image": "/project11.png",
+        "enabled_all": false
+    },
+    {
+        "projectName": "WADE LAW GROUP",
+        "role": "Handling their Blogs, Pages, Team Pages, and Service Pages",
+        "website": "https://wadelitigation.com/",
+        "location": "California",
+        "image": "/project12.png",
+        "enabled_all_all": false
+    },
+    {
+        "projectName": "ASN ( American Savings Network )",
+        "role": "Developed a web app in Core PHP for contracts, tours, events, bookings, and payments; later migrated to Laravel",
+        "website": "https://asntravel.club/",
+        "location": "America",
+        "image": "/project13.png",
+        "enabled_all_all": false
+    },
+    {
+        "projectName": "NeuroGym",
+        "role": "Implemented event scheduling functionality and Events Dates.",
+        "website": "https://www.myneurogym.com/",
+        "location": "Rancho Santa Fe, CA 92067, United States of America",
+        "image": "/project14.png",
+        "enabled_all_all": false
+    }
+]
