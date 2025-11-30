@@ -47,15 +47,15 @@ export default function Contact() {
 
     emailjs
       .send(
-        "service_romu1li",       
-        "template_lbuche8",    
+        "service_1yyk8zs",       
+        "template_n9oj3yr",    
         {
           name: formData.name,
           email: formData.email,
           subject: formData.subject,
           message: formData.message,
         },
-        "4AWkBfBTXrkt5FE8x"      
+        "Tu9EZ5LL3XuSnvEVd"      
       )
       .then(
         (result) => {

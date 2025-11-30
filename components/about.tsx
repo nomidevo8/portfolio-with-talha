@@ -44,14 +44,14 @@ export default function About() {
                 <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent"></div>
               </div>
               <div className="absolute -bottom-4 -right-4 bg-secondary/10 backdrop-blur-sm border border-border p-4 rounded-lg">
-                <p className="text-lg font-medium">2+ Years Experience</p>
+                <p className="text-lg font-medium">1+ Year Experience</p>
               </div>
             </div>
           </div>
 
           <div className="self-center">
             <p className="text-lg leading-relaxed mb-6 reveal reveal-delay-1">
-              I'm a skilled WordPress developer with knowledge of Core PHP, plugin development, and theme customization. My area of expertise is creating responsive, high-performance websites that put an emphasis on security, speed, and great user experiences. I love building unique admin panels and coming up with effective, customized solutions to help businesses succeed online because I'm passionate about finding solutions to challenging problems.
+              I'm a skilled Frontend developer with knowledge of React.js and Next. My area of expertise is creating responsive, high-performance websites that put an emphasis on security, speed, and great user experiences. I love building unique admin panels and coming up with effective, customized solutions to help businesses succeed online because I'm passionate about finding solutions to challenging problems.
             </p>
             <p className="text-lg leading-relaxed mb-8 reveal reveal-delay-2">
           
@@ -60,15 +60,15 @@ export default function About() {
             <div className="space-y-4 reveal reveal-delay-3">
               <div className="flex gap-4  rounded-lg hover:bg-secondary/10 transition-colors">
                 <div className="w-32 font-medium text-primary">Address:</div>
-                <div>Kot samaba, Rahim yar khan, Punjab Pakistan</div>
+                <div>Rahim yar khan, Punjab Pakistan</div>
               </div>
               <div className="flex gap-4  rounded-lg hover:bg-secondary/10 transition-colors">
                 <div className="w-32 font-medium text-primary">Date of Birth:</div>
-                <div>August 4, 2002</div>
+                <div>December 29, 2003</div>
               </div>
               <div className="flex gap-4  rounded-lg hover:bg-secondary/10 transition-colors">
                 <div className="w-32 font-medium text-primary">Nationality:</div>
-                <div>Pakistan</div>
+                <div>Pakistani</div>
               </div>
               <div className="flex gap-4  rounded-lg hover:bg-secondary/10 transition-colors">
                 <div className="w-32 font-medium text-primary">Languages:</div>
@@ -76,15 +76,11 @@ export default function About() {
               </div>
               <div className="flex gap-4  rounded-lg hover:bg-secondary/10 transition-colors">
                 <div className="w-32 font-medium text-primary">Phone:</div>
-                <div>03707931432</div>
-              </div>
-              <div className="flex gap-4  rounded-lg hover:bg-secondary/10 transition-colors">
-                <div className="w-32 font-medium text-primary">Mobile/Chat:</div>
-                <div>03043403219</div>
+                <div>03412607741</div>
               </div>
               <div className="flex gap-4  rounded-lg hover:bg-secondary/10 transition-colors">
                 <div className="w-32 font-medium text-primary">Email:</div>
-                <div>nomideveloper628@gmail.com</div>
+                <div>talhacoder1033@gmail.com</div>
               </div>
             </div>
           </div>

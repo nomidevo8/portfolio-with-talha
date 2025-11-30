@@ -27,13 +27,12 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-background/90 backdrop-blur-md shadow-md" : "bg-transparent"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-background/90 backdrop-blur-md shadow-md" : "bg-transparent"
+        }`}
     >
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <Link href="/" className="text-xl font-bold gradient-text">
-          NOMIII
+          TALHAAA
         </Link>
 
         <div className="hidden md:flex items-center gap-8">
@@ -52,7 +51,9 @@ export default function Navbar() {
             </Link>
           </nav>
           <Button className="rounded-full bg-primary/50 hover:bg-primary/80 backdrop-blur-sm">
-            <Phone className="mr-2 h-4 w-4" /> SCHEDULE A CALL
+            <Phone className="mr-2 h-4 w-4" />
+            <a href="https://cal.com/talhacoder.gt.tc/15min" target="_blank">
+              SCHEDULE A CALL</a>
           </Button>
         </div>
 
