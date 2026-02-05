@@ -70,8 +70,8 @@ export default function Hero() {
           <div className="flex-1 flex flex-col items-start">
             <h1 className="hero-name text-left transition-transform duration-300 ease-out text-glow">
               <div className="flex flex-col">
-                <span className="gradient-text reveal">NAU</span>
-                <span className="ml-16 gradient-text reveal reveal-delay-1">MAN</span>
+              <span className="gradient-text reveal">NAUMAN</span>
+              <span className="ml-16 reveal gradient-text reveal-delay-1">SAJJAD</span>
               </div>
             </h1>
 

@@ -2,17 +2,19 @@
 
 import { useEffect, useState, useRef } from "react"
 import Image from "next/image"
+import Link from "next/link"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { ExternalLink, MapPin } from "lucide-react"
 import projectsData from "@/components/data/projects.json"
 
 type Project = {
+  slug: string
   projectName: string
   role: string
   website: string
   location: string
-  image: string // now using manually uploaded images
+  image: string
   enabled_all?: boolean | string
   enabled_all_all?: boolean | string
 }
@@ -98,44 +100,61 @@ useEffect(() => {
         {/* Project Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {currentProjects.map((project, index) => (
-            <Card
-              key={index}
-              className="project-card border border-border bg-background/80 backdrop-blur-sm h-full overflow-hidden revealDev hover:shadow-xl hover:-translate-y-2 transition-all duration-300 rounded-2xl"
-              style={{ transitionDelay: `${index * 0.1}s` }}
+            <Link
+              key={project.slug}
+              href={`/projects/${project.slug}`}
+              className="block h-full group"
             >
-              {/* Project Image */}
-              <div className="relative h-52 w-full overflow-hidden">
-                <Image
-                  src={project.image} // e.g. "/images/project1.jpg"
-                  alt={project.projectName}
-                  fill
-                  className="object-cover transition-transform duration-500 hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-              </div>
-
-              <CardHeader>
-                <CardTitle className="text-lg font-semibold">{project.projectName}</CardTitle>
-                <div className="flex items-center text-primary/80 text-sm">
-                  <MapPin className="w-4 h-4 mr-1" />
-                  <p>{project.location}</p>
+              <Card
+                className="project-card border border-border bg-background/80 backdrop-blur-sm h-full overflow-hidden revealDev hover:shadow-xl hover:-translate-y-2 transition-all duration-300 rounded-2xl"
+                style={{ transitionDelay: `${index * 0.1}s` }}
+              >
+                {/* Project Image */}
+                <div className="relative h-52 w-full overflow-hidden">
+                  <Image
+                    src={project.image}
+                    alt={project.projectName}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                 </div>
-              </CardHeader>
 
-              <CardContent>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  Role: {project.role}
-                </p>
-              </CardContent>
+                <CardHeader>
+                  <CardTitle className="text-lg font-semibold">
+                    {project.projectName}
+                  </CardTitle>
+                  <div className="flex items-center text-primary/80 text-sm">
+                    <MapPin className="w-4 h-4 mr-1 shrink-0" />
+                    <p>{project.location}</p>
+                  </div>
+                </CardHeader>
 
-              <CardFooter>
-                <Button asChild variant="outline" size="sm" className="w-full">
-                  <a href={project.website} target="_blank" rel="noopener noreferrer">
-                    Visit Website <ExternalLink className="ml-2 h-4 w-4" />
-                  </a>
-                </Button>
-              </CardFooter>
-            </Card>
+                <CardContent>
+                  <p className="text-muted-foreground text-sm leading-relaxed line-clamp-3">
+                    Role: {project.role}
+                  </p>
+                </CardContent>
+
+                <CardFooter>
+                  <Button asChild variant="outline" size="sm" className="w-full mr-3">
+                    <a href={`/projects/${project.slug}`} target="_blank" rel="noopener noreferrer">
+                      View Details <ExternalLink className="ml-2 h-4 w-4" />
+                    </a>
+                  </Button>
+                  <Button asChild variant="outline" size="sm" className="w-full">
+                    <a
+                      href={project.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      Visit Website <ExternalLink className="ml-2 h-4 w-4" />
+                    </a>
+                  </Button>
+                </CardFooter>
+              </Card>
+            </Link>
           ))}
         </div>
 
