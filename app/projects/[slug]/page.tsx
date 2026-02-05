@@ -126,7 +126,7 @@ export default async function ProjectDetailPage({ params }: Props) {
                     <ExternalLink className="h-4 w-4" />
                   </a>
                 </Button> */}
-                <LivePreviewButton url={liveUrl} />
+                <LivePreviewButton url={liveUrl} innerText="Take a Look" />
               </div>
               <div className="flex flex-wrap gap-3 reveal reveal-delay-3">
                 {project.github_url && (
