@@ -59,20 +59,27 @@ export default async function ProjectDetailPage({ params }: Props) {
       <RevealObserver />
       <main className="min-h-screen flex flex-col">
         {/* Hero */}
-        <section className="relative h-auto overflow-hidden min-h-[90vh] bg-secondary/5 bg-dots" style={{
-          backgroundImage: `url(${project.image})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'top center',
-          backgroundRepeat: 'no-repeat'
-        }}
-        >
-          <div className="container mx-auto flex items-center px-4 p-9 min-h-[90vh] backdrop-blur-[1px] bg-[#0000001f]" 
+        <section
+          className="relative h-auto overflow-hidden min-h-[90vh] bg-secondary/5 bg-dots"
           style={{
-            background: 'linear-gradient(to right, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.6) 35%, rgba(0, 0, 0, 0) 70%)',
-            height: '100%',
+            backgroundImage: `url(${project.image})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'top center',
+            backgroundRepeat: 'no-repeat',
           }}
+        >
+          <div
+            className="container mx-auto flex items-center px-4 p-9 min-h-[90vh] backdrop-blur-[1px] bg-[#0000001f]"
+            style={{
+              // Desktop gradient
+              background: 'linear-gradient(to right, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.6) 35%, rgba(0, 0, 0, 0) 70%)',
+              height: '100%',
+            }}
           >
-            <div className="max-w-3xl">
+            {/* Mobile Full Gradient */}
+            <div className="absolute inset-0 md:hidden bg-black/70"></div>
+
+            <div className="relative max-w-3xl">
               <Link
                 href="/#projects"
                 className="inline-flex items-center gap-2 hover:text-primary transition-colors mb-8 reveal"
@@ -88,7 +95,7 @@ export default async function ProjectDetailPage({ params }: Props) {
                 {project.short_description}
               </p>
 
-              {project.location && project.location !== "None" && project.location !== "none" && (
+              {project.location && project.location.toLowerCase() !== 'none' && (
                 <div className="flex items-center gap-2 text-sm mb-6 reveal reveal-delay-2">
                   <MapPin className="h-4 w-4 shrink-0" />
                   <span>{project.location}</span>
@@ -98,11 +105,7 @@ export default async function ProjectDetailPage({ params }: Props) {
               {techStack.length > 0 && (
                 <div className="flex flex-wrap gap-2 mb-8 reveal reveal-delay-2">
                   {techStack.map((tech) => (
-                    <Badge
-                      key={tech}
-                      variant="secondary"
-                      className="font-medium"
-                    >
+                    <Badge key={tech} variant="secondary" className="font-medium">
                       {tech}
                     </Badge>
                   ))}
@@ -138,6 +141,7 @@ export default async function ProjectDetailPage({ params }: Props) {
             </div>
           </div>
         </section>
+
 
         {/* Content */}
         <div className="container mx-auto px-4 py-12 md:py-16 max-w-4xl">
@@ -211,7 +215,7 @@ export default async function ProjectDetailPage({ params }: Props) {
           </div>
 
           {/* Screenshots */}
-          <ContentSection title="Screenshots / Preview" className="reveal pt-4 p-9">
+          <ContentSection title="Screenshots / Preview"   className="reveal pt-2 px-4 md:pt-4 md:px-9">
             <ProjectCarousel screenshots={screenshots} title={project.title} />
           </ContentSection>
 
@@ -240,7 +244,7 @@ function ContentSection({
 }) {
   return (
     <section className={` ${className}`}>
-      <h2 className="section-heading gradient-text mb-4">{title}</h2>
+      <h2 className="section-heading gradient-text mb-2">{title}</h2>
       <Card className="border border-border bg-secondary/5">
         <CardContent className="pt-6">{children}</CardContent>
       </Card>

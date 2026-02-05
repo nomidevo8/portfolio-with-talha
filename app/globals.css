@@ -83,7 +83,7 @@
 }
 
 .section-heading {
-  @apply text-3xl font-bold mb-6 border-b border-border pb-2;
+  @apply text-3xl font-bold border-b border-border pb-2;
 }
 
 .project-card {
