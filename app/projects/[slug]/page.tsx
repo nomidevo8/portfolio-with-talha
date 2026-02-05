@@ -9,6 +9,7 @@ import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
 import { ArrowLeft, ExternalLink, Github, MapPin } from "lucide-react"
 import RevealObserver from "@/components/reveal-observer"
+import ProjectCarousel from "@/components/project-carousel"
 
 const SITE_TITLE = "Nauman Sajjad"
 
@@ -37,6 +38,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function ProjectDetailPage({ params }: Props) {
+  
   const { slug } = await params
   const project = getProjectBySlug(slug)
 
@@ -57,12 +59,23 @@ export default async function ProjectDetailPage({ params }: Props) {
       <RevealObserver />
       <main className="min-h-screen flex flex-col">
         {/* Hero */}
-        <section className="relative pt-24 pb-16 md:pt-28 md:pb-20 overflow-hidden bg-secondary/5 bg-dots">
-          <div className="container mx-auto px-4">
+        <section className="relative h-auto overflow-hidden min-h-[90vh] bg-secondary/5 bg-dots" style={{
+          backgroundImage: `url(${project.image})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'top center',
+          backgroundRepeat: 'no-repeat'
+        }}
+        >
+          <div className="container mx-auto flex items-center px-4 p-9 min-h-[90vh] backdrop-blur-[1px] bg-[#0000001f]" 
+          style={{
+            background: 'linear-gradient(to right, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.6) 35%, rgba(0, 0, 0, 0) 70%)',
+            height: '100%',
+          }}
+          >
             <div className="max-w-3xl">
               <Link
                 href="/#projects"
-                className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors mb-8 reveal"
+                className="inline-flex items-center gap-2 hover:text-primary transition-colors mb-8 reveal"
               >
                 <ArrowLeft className="h-4 w-4" />
                 Back to Projects
@@ -71,12 +84,12 @@ export default async function ProjectDetailPage({ params }: Props) {
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 reveal gradient-text">
                 {project.title}
               </h1>
-              <p className="text-lg md:text-xl text-muted-foreground mb-6 reveal reveal-delay-1">
+              <p className="text-lg md:text-xl mb-6 reveal reveal-delay-1 max-w-xl">
                 {project.short_description}
               </p>
 
               {project.location && project.location !== "None" && project.location !== "none" && (
-                <div className="flex items-center gap-2 text-sm text-muted-foreground mb-6 reveal reveal-delay-2">
+                <div className="flex items-center gap-2 text-sm mb-6 reveal reveal-delay-2">
                   <MapPin className="h-4 w-4 shrink-0" />
                   <span>{project.location}</span>
                 </div>
@@ -129,7 +142,7 @@ export default async function ProjectDetailPage({ params }: Props) {
         {/* Content */}
         <div className="container mx-auto px-4 py-12 md:py-16 max-w-4xl">
           {project.problem && (
-            <ContentSection title="The Problem" className="reveal">
+            <ContentSection title="The Problem" className="reveal pt-4">
               <p className="text-muted-foreground leading-relaxed">
                 {project.problem}
               </p>
@@ -137,7 +150,7 @@ export default async function ProjectDetailPage({ params }: Props) {
           )}
 
           {project.solution && (
-            <ContentSection title="The Solution" className="reveal">
+            <ContentSection title="The Solution" className="reveal pt-4">
               <p className="text-muted-foreground leading-relaxed">
                 {project.solution}
               </p>
@@ -145,7 +158,7 @@ export default async function ProjectDetailPage({ params }: Props) {
           )}
 
           {implementation.length > 0 && (
-            <ContentSection title="How It Was Implemented" className="reveal">
+            <ContentSection title="How It Was Implemented" className="reveal pt-4">
               <ul className="space-y-2">
                 {implementation.map((step, i) => (
                   <li
@@ -163,7 +176,7 @@ export default async function ProjectDetailPage({ params }: Props) {
           )}
 
           {features.length > 0 && (
-            <ContentSection title="Key Features" className="reveal">
+            <ContentSection title="Key Features" className="reveal pt-4">
               <ul className="grid gap-2 sm:grid-cols-2">
                 {features.map((feature, i) => (
                   <li
@@ -178,33 +191,10 @@ export default async function ProjectDetailPage({ params }: Props) {
             </ContentSection>
           )}
 
-          {/* Screenshots */}
-          <section className="mb-16 reveal">
-            <h2 className="section-heading gradient-text mb-6">
-              Screenshots / Preview
-            </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {screenshots.map((src, i) => (
-                <Card
-                  key={i}
-                  className="overflow-hidden border border-border bg-background/80"
-                >
-                  <div className="relative aspect-video w-full">
-                    <Image
-                      src={src}
-                      alt={`${project.title} screenshot ${i + 1}`}
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 640px) 100vw, 50vw"
-                    />
-                  </div>
-                </Card>
-              ))}
-            </div>
-          </section>
+    
 
           {techStack.length > 0 && (
-            <ContentSection title="Tech Stack" className="reveal">
+            <ContentSection title="Tech Stack" className="reveal pt-4">
               <div className="flex flex-wrap gap-2">
                 {techStack.map((tech) => (
                   <Badge
@@ -218,9 +208,15 @@ export default async function ProjectDetailPage({ params }: Props) {
               </div>
             </ContentSection>
           )}
+          </div>
+
+          {/* Screenshots */}
+          <ContentSection title="Screenshots / Preview" className="reveal pt-4 p-9">
+            <ProjectCarousel screenshots={screenshots} title={project.title} />
+          </ContentSection>
 
           {/* Back CTA */}
-          <div className="pt-8 pb-16 reveal">
+          <div className="pt-8 pb-16 text-center reveal">
             <Button asChild variant="outline" size="lg" className="rounded-full">
               <Link href="/#projects" className="inline-flex items-center gap-2">
                 <ArrowLeft className="h-4 w-4" />
@@ -228,7 +224,6 @@ export default async function ProjectDetailPage({ params }: Props) {
               </Link>
             </Button>
           </div>
-        </div>
       </main>
     </>
   )
@@ -244,7 +239,7 @@ function ContentSection({
   className?: string
 }) {
   return (
-    <section className={`mb-12 ${className}`}>
+    <section className={` ${className}`}>
       <h2 className="section-heading gradient-text mb-4">{title}</h2>
       <Card className="border border-border bg-secondary/5">
         <CardContent className="pt-6">{children}</CardContent>

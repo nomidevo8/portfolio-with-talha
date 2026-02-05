@@ -17,7 +17,7 @@
         "implementation": ["Set up a WordPress multisite architecture for scalability", "Designed custom post types and ACF field groups for structured content", "Implemented donation flows customized per church", "Maintained unified branding with room for site-level customization"],
         "features": ["Multisite management", "Events & sermons", "Donation handling", "Pastor profiles"],
         "tech_stack": ["WordPress", "PHP", "ACF", "MySQL"],
-        "screenshots": ["/kcrea.png"],
+        "screenshots": ["/kcrea.png", "/project2.png", "/project2.png"],
         "enabled_all": false
     },
     {
