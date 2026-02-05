@@ -10,6 +10,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { ArrowLeft, ExternalLink, Github, MapPin } from "lucide-react"
 import RevealObserver from "@/components/reveal-observer"
 import ProjectCarousel from "@/components/project-carousel"
+import LivePreviewButton from "@/components/live-preview-button";
 
 const SITE_TITLE = "Nauman Sajjad"
 
@@ -79,7 +80,7 @@ export default async function ProjectDetailPage({ params }: Props) {
             {/* Mobile Full Gradient */}
             <div className="absolute inset-0 md:hidden bg-black/70"></div>
 
-            <div className="relative max-w-3xl">
+            <div className="relative w-full">
               <Link
                 href="/#projects"
                 className="inline-flex items-center gap-2 hover:text-primary transition-colors mb-8 reveal"
@@ -96,7 +97,7 @@ export default async function ProjectDetailPage({ params }: Props) {
               </p>
 
               {project.location && project.location.toLowerCase() !== 'none' && (
-                <div className="flex items-center gap-2 text-sm mb-6 reveal reveal-delay-2">
+                <div className=" gap-2 text-sm mb-6 reveal reveal-delay-2">
                   <MapPin className="h-4 w-4 shrink-0" />
                   <span>{project.location}</span>
                 </div>
@@ -111,9 +112,10 @@ export default async function ProjectDetailPage({ params }: Props) {
                   ))}
                 </div>
               )}
-
-              <div className="flex flex-wrap gap-3 reveal reveal-delay-3">
-                <Button asChild size="lg" className="rounded-full">
+                
+              {/* Link preview  */}
+              <div>
+                {/* <Button asChild size="lg" className="rounded-full">
                   <a
                     href={liveUrl}
                     target="_blank"
@@ -123,7 +125,10 @@ export default async function ProjectDetailPage({ params }: Props) {
                     Live Preview
                     <ExternalLink className="h-4 w-4" />
                   </a>
-                </Button>
+                </Button> */}
+                <LivePreviewButton url={liveUrl} />
+              </div>
+              <div className="flex flex-wrap gap-3 reveal reveal-delay-3">
                 {project.github_url && (
                   <Button asChild variant="outline" size="lg" className="rounded-full">
                     <a
