@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Menu, X, Phone } from "lucide-react"
+import LivePreviewButton from "@/components/live-preview-button";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -32,7 +33,7 @@ export default function Navbar() {
     >
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <Link href="/" className="text-xl font-bold gradient-text">
-          TALHAAA
+          NOMII
         </Link>
 
         <div className="hidden md:flex items-center gap-8">
@@ -50,11 +51,13 @@ export default function Navbar() {
               Contact
             </Link>
           </nav>
-          <Button className="rounded-full bg-primary/50 hover:bg-primary/80 backdrop-blur-sm">
+            <LivePreviewButton url={"https://cal.com/talhacoder.gt.tc/15min"} innerText="Schedule a call" />
+
+          {/* <Button className="rounded-full bg-primary/50 hover:bg-primary/80 backdrop-blur-sm">
             <Phone className="mr-2 h-4 w-4" />
             <a href="https://cal.com/talhacoder.gt.tc/15min" target="_blank">
               SCHEDULE A CALL</a>
-          </Button>
+          </Button> */}
         </div>
 
         <button
@@ -97,7 +100,9 @@ export default function Navbar() {
               Contact
             </Link>
             <Button className="rounded-full mt-2 bg-primary/20 hover:bg-primary/30">
-              <Phone className="mr-2 h-4 w-4" /> SCHEDULE A CALL
+              <Phone className="mr-2 h-4 w-4" />  
+              <a href="https://cal.com/talhacoder.gt.tc/15min" target="_blank">
+              SCHEDULE A CALL</a>
             </Button>
           </nav>
         </div>

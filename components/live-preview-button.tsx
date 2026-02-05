@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
 
-export default function LivePreviewButton({ url }: { url: string }) {
+export default function LivePreviewButton({ url, innerText}: { url: string , innerText: string}) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -15,7 +15,7 @@ export default function LivePreviewButton({ url }: { url: string }) {
         onClick={() => setIsOpen(true)}
       >
         <span className="inline-flex items-center gap-2">
-          Take a look
+            {innerText}
           <ExternalLink className="h-4 w-4" />
         </span>
       </Button>
