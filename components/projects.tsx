@@ -137,7 +137,7 @@ useEffect(() => {
                 </CardContent>
 
                 <CardFooter>
-                  <Button asChild variant="outline" size="sm" className="w-full mr-3">
+                  <Button asChild variant="outline" size="sm" className="w-full">
                     <a href={`/projects/${project.slug}`} target="_blank" rel="noopener noreferrer">
                       View Details <ExternalLink className="ml-2 h-4 w-4" />
                     </a>

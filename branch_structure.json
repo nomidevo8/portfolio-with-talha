@@ -1,0 +1,15 @@
+{
+  "default_branch": "main",
+  "branches": [
+    "Talha-Portfolio",
+    "main"
+  ],
+  "parent": {
+    "Talha-Portfolio": "main",
+    "main": null
+  },
+  "order": [
+    "main",
+    "Talha-Portfolio"
+  ]
+}

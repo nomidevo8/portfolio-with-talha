@@ -76,7 +76,7 @@ export default function Hero() {
             </h1>
 
             <div className="mt-4 mb-8 reveal reveal-delay-2">
-              <h2 className="text-2xl md:text-3xl font-medium">
+              <h2 className="text-1xl md:text-3xl font-medium">
                 <span className="text-primary">WordPress Developer</span>{" "}
                 <span className="mx-2 text-muted-foreground">•</span>
                 <span className="text-primary">Customization Specialist</span>{" "}
